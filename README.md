@@ -1,4 +1,4 @@
-# VoxCart - Voice Command Shopping Assistant
+# VoxCart - Voice Command Shopping Assistant (Deployed at https://voxcart.streamlit.app/)
 
 VoxCart is a Python + Streamlit shopping-list assistant built for a software-engineering technical assessment. It accepts typed or spoken commands, understands common natural-language phrasing in multiple languages, manages shopping-list quantities, categorizes products, searches a sample catalog, and generates simple explainable recommendations.
 
