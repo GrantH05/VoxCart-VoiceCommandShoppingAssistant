@@ -118,24 +118,3 @@ voice-shopping-assistant-streamlit/
 ├── README.md
 └── .gitignore
 ```
-
-## Run tests
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-## Deploy on Streamlit Community Cloud
-
-1. Push this folder to a GitHub repository.
-2. Sign in to Streamlit Community Cloud.
-3. Create a new app from the GitHub repository.
-4. Set the main file to `app.py`.
-5. Deploy.
-6. Allow microphone permission in the browser when testing voice input.
-
-SQLite is suitable for this assessment demo. On some hosted environments the local file system can be ephemeral, so production persistence should use a managed database.
-
-## Approach write-up (under 200 words)
-
-I built VoxCart as a lightweight Python and Streamlit application focused on completing the assessment's user-facing flows within the eight-hour constraint. Voice transcription is handled through a Streamlit microphone component, while a small rule-based NLP layer converts flexible phrases into structured actions such as add, remove, update, clear, and search. The parser also extracts quantities, units, product names, brands, and price limits and supports common phrases in English, Hindi, Spanish, and French. Shopping-list and history data are stored in SQLite, which keeps the demo simple while still providing persistent state locally. A sample product catalog powers category assignment, availability checks, price filtering, sale/seasonal suggestions, and substitutes. Smart suggestions combine previous shopping history with seasonal products, sale flags, and an optional user preference. The UI provides immediate transcription feedback, loading states, confirmations, mobile-friendly list controls, manual typing as a fallback, and separate views for list management, catalog search, suggestions, and history. In production, I would replace the sample catalog with retailer APIs and use a managed database and stronger NLU service.
